@@ -7,21 +7,11 @@ package main
 import (
   "fmt"
   "os"
+  "strings"
 )
 
-//This is the inefficient, looping version of this program. See ex1_3 for the more efficient one using strings.Join.
+//Prints a string containing everything passed in to os.Args, separated by spaces.
 
-func main(){
-  var arguments string
-
-  //Adds os.Args[0] to the beginning of the arguments string.
-  arguments += os.Args[0]
-
-  //Lopos over the other arguments and adds them to the string.
-  for _, arg := range os.Args[1:] {
-    arguments += " " + arg
-  }
-
-  //Prints the string.
-  fmt.Println(arguments)
+func main() {
+  fmt.Println(strings.Join(os.Args[0:], " "))
 }
